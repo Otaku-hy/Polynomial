@@ -1,5 +1,12 @@
+#ifndef Polynomial_H_
+#define Polynomial_H_
+
 #include <iostream>
 #include <memory>
+#include <cmath>
+
+namespace PolynomialProject
+{
 
 struct PolynomialNode
 {
@@ -9,6 +16,7 @@ struct PolynomialNode
     double coef = 0;
     SharedPtr next = nullptr;
 
+    PolynomialNode() = default;
     PolynomialNode(int32_t _expo, double _coef) : expo(_expo), coef(_coef), next(nullptr){};
 };
 
@@ -31,4 +39,10 @@ public:
 
     Polynomial &operator=(const Polynomial &other);
     Polynomial operator+(const Polynomial &other);
+    Polynomial operator-(const Polynomial &other);
+    double Value(double x);
 };
+
+} //Polynomial
+
+#endif
