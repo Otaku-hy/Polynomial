@@ -6,7 +6,6 @@
 #include <sstream>
 #include <fstream>
 #include <memory>
-#include <optional>
 #include <assert.h>
 #include <map>
 
@@ -18,7 +17,7 @@ namespace PolynomialProject
 class InputParser
 {
 private:
-    std::string file_name = "PolynomialInput.txt";
+    std::string file_name_ = "PolynomialInput.txt";
 
 public:
     using SharedPtr = std::shared_ptr<InputParser>;

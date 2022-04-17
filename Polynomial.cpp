@@ -40,6 +40,7 @@ void Polynomial::PrintPolynomial()
         std::cout << "," << traverse_ptr->coef << "," << traverse_ptr->expo;
         traverse_ptr = traverse_ptr->next;
     }
+    std::cout << std::endl;
 }
 
 void Polynomial::InsertNode(const PolynomialNode::SharedPtr &node)
@@ -200,7 +201,7 @@ Polynomial Polynomial::operator-(const Polynomial &other)
             result.poly_size_++;
             continue;
         }
-        else if(others_traverse_ptr->coef > this_traverse_ptr->expo)
+        else if(others_traverse_ptr->expo > this_traverse_ptr->expo)
         {
             result_traverse_ptr->next = std::make_shared<PolynomialNode>(others_traverse_ptr->expo,(-1)*others_traverse_ptr->coef);
             result_traverse_ptr = result_traverse_ptr->next;

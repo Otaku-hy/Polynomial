@@ -12,3 +12,15 @@
     2 1
     1 1
 #END_POLYNOMIAL
+
+#BEGIN_POLYNOMIAL
+    #name: p3
+    2 -1.0
+    1 -21.3
+#END_POLYNOMIAL
+
+#BEGIN_POLYNOMIAL
+    #name: p4
+    -3 -1.0
+    -2 -21.3
+#END_POLYNOMIAL

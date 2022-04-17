@@ -13,7 +13,7 @@ namespace PolynomialProject
     std::map<std::string, Polynomial::SharedPtr> InputParser::UpdatePolynomialData()
     {
         std::map<std::string, Polynomial::SharedPtr> polynomial_pool;
-        std::fstream file(file_name);
+        std::fstream file(file_name_);
         std::string line;
         while (getline(file, line))
         {
@@ -58,7 +58,7 @@ namespace PolynomialProject
                 }
                 else
                 {
-                    if (word.find_first_not_of("0123456789.") < word.size())
+                    if (word.find_first_not_of("-0123456789.") < word.size())
                     {
                         assert("unsupported data");
                     }
@@ -67,7 +67,7 @@ namespace PolynomialProject
                         expo = std::stoi(word);
                         line_stream >> word;
                         
-                        if (word.find_first_not_of("0123456789.") < word.size())
+                        if (word.find_first_not_of("-0123456789.") < word.size())
                            assert("unsupported data");
                         else
                         {
