@@ -2,7 +2,7 @@
 
 namespace PolynomialProject
 {
-    Interaction::Interaction() : interactive_option_(-1),inputParser_(InputParser())
+    Interaction::Interaction() : interactive_option_(),inputParser_(InputParser())
     {
     }
 
@@ -15,14 +15,14 @@ namespace PolynomialProject
     {
         UpdatePolynomials();
 
-        while (std::cin >> interactive_option_, interactive_option_ != 6)
+        while (std::cin >> interactive_option_, interactive_option_ != "6")
         {
-            if (interactive_option_ == 1)
+            if (interactive_option_ == "1")
             {
                 UpdatePolynomials();
                 std::cout <<"update success!"<<std::endl;
             }
-            else if (interactive_option_ == 2)
+            else if (interactive_option_ == "2")
             {
                 std::string poly_name;
                 std::cin >> poly_name;
@@ -33,21 +33,22 @@ namespace PolynomialProject
                 }
                 polynomials_pool_[poly_name]->PrintPolynomial();
             }
-            else if (interactive_option_ == 3)
+            else if (interactive_option_ == "3")
             {
                 AddPolynomials();
             }
-            else if (interactive_option_ == 4)
+            else if (interactive_option_ == "4")
             {
                 MinusPolynomials();
             }
-            else if (interactive_option_ == 5)
+            else if (interactive_option_ == "5")
             {
                 ComputeValue();
             }
             else
             {
                 std::cout << "Unsupported operator";
+                continue;
             }
         }
     }

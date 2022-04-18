@@ -37,7 +37,7 @@ void Polynomial::PrintPolynomial()
     PolynomialNode::SharedPtr traverse_ptr = head_node_->next;
     while (traverse_ptr)
     {
-        std::cout << "," << traverse_ptr->coef << "," << traverse_ptr->expo;
+        std::cout << ", " << traverse_ptr->coef << ":" << traverse_ptr->expo;
         traverse_ptr = traverse_ptr->next;
     }
     std::cout << std::endl;
@@ -45,6 +45,8 @@ void Polynomial::PrintPolynomial()
 
 void Polynomial::InsertNode(const PolynomialNode::SharedPtr &node)
 {
+    if(node->coef == 0) return;
+
     if (IsEmpty())
     {
         head_node_->next = node;

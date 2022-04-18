@@ -16,11 +16,13 @@ namespace PolynomialProject
     class Interaction
     {
     private:
-        uint32_t interactive_option_;
+        std::string interactive_option_;
         std::map<std::string, Polynomial::SharedPtr> polynomials_pool_;
         InputParser inputParser_;
 
     public:
+        using SharedPtr = std::shared_ptr<Interaction>;
+
         Interaction();
         ~Interaction();
 
