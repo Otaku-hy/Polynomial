@@ -94,8 +94,8 @@ namespace PolynomialProject
         else
         {
             std::stringstream expression(option_expression);
-            expression >> holder;
             expression >> pa;
+            expression >> holder;
             expression >> pb;
             if (polynomials_pool_.find(pa) == polynomials_pool_.end() || polynomials_pool_.find(pb) == polynomials_pool_.end())
             {
